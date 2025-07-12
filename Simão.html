@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Alerta de Segurança</title>
+  <style>
+    body {
+      background-color: black;
+      color: red;
+      font-family: 'Courier New', monospace;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      font-size: 2em;
+    }
+    .warning {
+      border: 2px solid red;
+      padding: 20px;
+      margin-top: 30px;
+      background-color: #1a1a1a;
+    }
+    #timer {
+      font-size: 2em;
+      margin-top: 20px;
+      color: yellow;
+    }
+  </style>
+  <script>
+    let timeLeft = 10;
+    function countdown() {
+      const timerEl = document.getElementById("timer");
+      if (timeLeft <= 0) {
+        window.location.href = "https://www.google.com"; // Redirecionamento
+      } else {
+        timerEl.innerHTML = "Análise em: " + timeLeft + " segundos...";
+        timeLeft -= 1;
+        setTimeout(countdown, 1000);
+      }
+    }
+    window.onload = countdown;
+  </script>
+</head>
+<body>
+  <h1>⚠️ ALERTA DE SEGURANÇA NACIONAL ⚠️</h1>
+
+  <div class="warning">
+    <p>🛑 Acesso não autorizado detetado.</p>
+    <p>IP Identificado: <strong>89.153.226.246</strong></p>
+    <p>Localização: Lisboa, Portugal</p>
+    <p>Atividade suspeita: Tentativa de acesso a conteúdo restrito</p>
+    <p>Referência do incidente: #SC-2891-SEC</p>
+
+    <div id="timer"></div>
+
+    <p style="margin-top: 20px;">🔒 Esta tentativa será registada.  
+    Não feche esta página.</p>
+  </div>
+</body>
+</html>
